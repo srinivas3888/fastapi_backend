@@ -14,6 +14,10 @@ app.add_middleware(
     allow_headers=["*"],  
     )
 
+@app.get("/")
+def h():
+    return {"Hello":"World"}
+
 @app.post("/download")
 def download_start(link: str = Form(...)):
     yt_di_opts={
